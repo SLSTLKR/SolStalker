@@ -1,50 +1,41 @@
+
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SolStalker - мем токен на блокчейне SOLANA. Добро пожаловать в мир SolStalker!">
-    <meta name="keywords" content="SolStalker, мем токен, Solana, криптовалюта">
-    <title>SolStalker - Мем Токен</title>
+    <meta name="description" content="SolStalker - Meme token on the Solana blockchain. Welcome to SolStalker!">
+    <meta name="keywords" content="SolStalker, meme token, Solana, cryptocurrency">
+    <title>SolStalker - Meme Token</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             background: url('https://i.imgur.com/OdfD8vy.jpeg') no-repeat center center fixed;
             background-size: cover;
+            min-height: 100vh;
             padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            height: 100vh;
+            color: white;
+        }
+        .header-text {
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); /* Green glow */
+            margin-top: 0;
+            margin-bottom: 30px;
+            padding-top: 20px;
         }
         .container {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            margin: auto;
-            transition: transform 0.3s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 60vh;
-        }
-        .container:hover {
-            transform: scale(1.02);
-        }
-        .content {
-            flex-grow: 1;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #444;
-        }
-        .buttons {
-            margin-top: auto;
+            max-width: 600px;
+            text-align: center;
+            margin: 10px auto;
         }
         .btn {
             display: inline-block;
@@ -54,78 +45,185 @@
             background: #007BFF;
             text-decoration: none;
             border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
         .btn:hover {
             background: #0056b3;
             transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
         }
-        .lang-switch {
-            margin-top: 10px;
+        .lang-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
         }
-        .lang-switch button {
+        .lang-buttons button {
+            font-size: 20px;
             padding: 5px 10px;
-            margin: 5px;
-            border: none;
-            background: #333;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .lang-switch button:hover {
-            background: #555;
         }
         footer {
-            margin-top: auto;
-            color: white;
             font-size: 14px;
             text-align: center;
             padding: 10px;
             background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+        .bottom-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
     <script>
+        // Texts in English and Russian for each section
+        const texts = {
+            'title': {
+                'ru': 'SolStalker - Мем Токен',
+                'en': 'SolStalker - Meme Token'
+            },
+            'welcomeText': {
+                'ru': 'Добро пожаловать в мир SolStalker! Это охотник за криптовалютой на блокчейне SOLANA.',
+                'en': 'Welcome to the world of SolStalker! A crypto hunter on the SOLANA blockchain.'
+            },
+            'buyToken': {
+                'ru': 'Купить токен',
+                'en': 'Buy Token'
+            },
+            'ourTwitter': {
+                'ru': 'Наш Twitter',
+                'en': 'Our Twitter'
+            },
+            'tokenomicsPageButton': {
+                'ru': 'Токеномика SolStalker (SLSR)',
+                'en': 'SolStalker Tokenomics (SLSR)'
+            },
+            'tokenomicsTitle': {
+                'ru': 'Токеномика SolStalker (SLSR)',
+                'en': 'SolStalker Tokenomics (SLSR)'
+            },
+            'blockchain': {
+                'ru': 'Блокчейн:',
+                'en': 'Blockchain:'
+            },
+            'ticker': {
+                'ru': 'Тикер:',
+                'en': 'Ticker:'
+            },
+            'totalSupply': {
+                'ru': 'Общий объем эмиссии:',
+                'en': 'Total supply:'
+            },
+            'launch': {
+                'ru': 'Запуск:',
+                'en': 'Launch:'
+            },
+            'futureListing': {
+                'ru': 'Будущий листинг:',
+                'en': 'Future listing:'
+            },
+            'distribution': {
+                'ru': 'Распределение токенов:',
+                'en': 'Token Distribution:'
+            },
+            'financialMechanics': {
+                'ru': 'Финансовая механика:',
+                'en': 'Financial Mechanics:'
+            },
+            'backButton': {
+                'ru': 'Вернуться назад',
+                'en': 'Go back'
+            },
+            'footer': {
+                'ru': '&copy; 2025 SolStalker. Все права защищены.',
+                'en': '&copy; 2025 SolStalker. All rights reserved.'
+            }
+        };
+
+        let currentLang = 'en'; // Default language is English
+
+        // Function to change language
         function changeLanguage(lang) {
-            const textContent = {
-                'ru': {
-                    title: 'SolStalker - Мем Токен',
-                    description: 'Добро пожаловать в мир SolStalker! Это охотник за криптовалютой на блокчейне SOLANA.',
-                    buyToken: 'Купить токен',
-                    twitter: 'Наш Twitter'
-                },
-                'en': {
-                    title: 'SolStalker - Meme Token',
-                    description: 'Welcome to the world of SolStalker! A cryptocurrency hunter on the SOLANA blockchain.',
-                    buyToken: 'Buy Token',
-                    twitter: 'Our Twitter'
-                }
-            };
-            document.querySelector('h1').textContent = textContent[lang].title;
-            document.querySelector('p').textContent = textContent[lang].description;
-            document.querySelector('.btn:first-of-type').textContent = textContent[lang].buyToken;
-            document.querySelector('.btn:nth-of-type(2)').textContent = textContent[lang].twitter;
+            currentLang = lang;
+            updateTexts();
+        }
+
+        // Function to update text on the page
+        function updateTexts() {
+            document.querySelector('.title').textContent = texts['title'][currentLang];
+            document.querySelector('#mainPage p').textContent = texts['welcomeText'][currentLang];
+            document.querySelector('#mainPage .btn:nth-child(1)').textContent = texts['tokenomicsPageButton'][currentLang];
+            document.querySelector('#buyTokenBtn').textContent = texts['buyToken'][currentLang];
+            document.querySelector('#ourTwitterBtn').textContent = texts['ourTwitter'][currentLang];
+            document.querySelector('#tokenomicsPage h1').textContent = texts['tokenomicsTitle'][currentLang];
+            document.querySelector('#tokenomicsPage p:nth-child(2)').textContent = `${texts['blockchain'][currentLang]} Solana`;
+            document.querySelector('#tokenomicsPage p:nth-child(3)').textContent = `${texts['ticker'][currentLang]} SLSR`;
+            document.querySelector('#tokenomicsPage p:nth-child(4)').textContent = `${texts['totalSupply'][currentLang]} 1 000 000 000 SLSR`;
+            document.querySelector('#tokenomicsPage p:nth-child(5)').textContent = `${texts['launch'][currentLang]} Pump.fun`;
+            document.querySelector('#tokenomicsPage p:nth-child(6)').textContent = `${texts['futureListing'][currentLang]} Raydium`;
+            document.querySelector('#tokenomicsPage h2:nth-child(7)').textContent = texts['distribution'][currentLang];
+            document.querySelector('#tokenomicsPage h2:nth-child(9)').textContent = texts['financialMechanics'][currentLang];
+            document.querySelector('#tokenomicsPage .btn').textContent = texts['backButton'][currentLang];
+            document.querySelector('footer').innerHTML = texts['footer'][currentLang];
+        }
+
+        // Function to show a specific page
+        function showPage(pageId) {
+            document.querySelectorAll('.container').forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
         }
     </script>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <h1>SolStalker - Мем Токен</h1>
-            <p>Добро пожаловать в мир SolStalker! Это охотник за криптовалютой на блокчейне SOLANA.</p>
+    <!-- SolStalker header text -->
+    <div class="header-text">SolStalker</div>
+
+    <div class="bottom-buttons">
+        <div id="mainPage" class="container">
+            <p class="title">Welcome to the world of SolStalker! A crypto hunter on the SOLANA blockchain.</p>
+            <button class="btn" onclick="showPage('tokenomicsPage')">SolStalker Tokenomics (SLSR)</button>
+            <a href="https://pump.fun/board" target="_blank" class="btn" id="buyTokenBtn">Buy Token</a>
+            <a href="https://x.com/SolStalkercoin" target="_blank" class="btn" id="ourTwitterBtn">Our Twitter</a>
         </div>
-        <div class="buttons">
-            <a href="https://pump.fun/board" class="btn" target="_blank">Купить токен</a>
-            <br><br>
-            <a href="https://x.com/SolStalkercoin" class="btn" target="_blank">Наш Twitter</a>
-            <div class="lang-switch">
-                <button onclick="changeLanguage('ru')">Рус</button>
-                <button onclick="changeLanguage('en')">Eng</button>
+
+        <div id="tokenomicsPage" class="container hidden">
+            <h1>SolStalker Tokenomics (SLSR)</h1>
+            <p><strong>Blockchain:</strong> Solana</p>
+            <p><strong>Ticker:</strong> SLSR</p>
+            <p><strong>Total supply:</strong> 1 000 000 000 SLSR</p>
+            <p><strong>Launch:</strong> Pump.fun</p>
+            <p><strong>Future listing:</strong> Raydium</p>
+
+            <h2>Token Distribution:</h2>
+            <p>✅ <strong>Liquidity Pool (Pump.fun):</strong> 100% (1 000 000 000 SLSR).</p>
+            <p>✅ <strong>Fair Launch:</strong> no pre-mine or team distribution.</p>
+            <p>✅ <strong>Trading:</strong> price determined solely by supply and demand.</p>
+
+            <h2>Financial Mechanics:</h2>
+            <p>✔ <strong>No minting:</strong> fixed supply.</p>
+            <p>✔ <strong>Future Raydium listing:</strong> liquidity transfer.</p>
+            <p>✔ <strong>Fair start:</strong> the entire tokenomics is in the hands of the market.</p>
+
+            <button class="btn" onclick="showPage('mainPage')">Go back</button>
+        </div>
+
+        <div class="lang-container">
+            <div class="lang-buttons">
+                <button class="btn" onclick="changeLanguage('ru')">Рус</button>
+                <button class="btn" onclick="changeLanguage('en')">Eng</button>
             </div>
         </div>
     </div>
+
     <footer>
-        &copy; 2025 SolStalker. Все права защищены.
+        &copy; 2025 SolStalker. All rights reserved.
     </footer>
 </body>
 </html>
