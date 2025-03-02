@@ -100,6 +100,10 @@
                 'ru': 'Наш Twitter',
                 'en': 'Our Twitter'
             },
+            'ourTelegram': {
+                'ru': 'Наш Telegram',
+                'en': 'Our Telegram'
+            },
             'tokenomicsPageButton': {
                 'ru': 'Токеномика SolStalker (SLSR)',
                 'en': 'SolStalker Tokenomics (SLSR)'
@@ -141,8 +145,8 @@
                 'en': 'Go back'
             },
             'footer': {
-                'ru': '&copy; 2025 SolStalker. Все права защищены.',
-                'en': '&copy; 2025 SolStalker. All rights reserved.'
+                'ru': '© 2025 SolStalker. Все права защищены.',
+                'en': '© 2025 SolStalker. All rights reserved.'
             }
         };
 
@@ -161,6 +165,7 @@
             document.querySelector('#mainPage .btn:nth-child(1)').textContent = texts['tokenomicsPageButton'][currentLang];
             document.querySelector('#buyTokenBtn').textContent = texts['buyToken'][currentLang];
             document.querySelector('#ourTwitterBtn').textContent = texts['ourTwitter'][currentLang];
+            document.querySelector('#ourTelegramBtn').textContent = texts['ourTelegram'][currentLang];
             document.querySelector('#tokenomicsPage h1').textContent = texts['tokenomicsTitle'][currentLang];
             document.querySelector('#tokenomicsPage p:nth-child(2)').textContent = `${texts['blockchain'][currentLang]} Solana`;
             document.querySelector('#tokenomicsPage p:nth-child(3)').textContent = `${texts['ticker'][currentLang]} SLSR`;
@@ -190,6 +195,7 @@
             <button class="btn" onclick="showPage('tokenomicsPage')">SolStalker Tokenomics (SLSR)</button>
             <a href="https://pump.fun/coin/DFswfPGinkLLjdqZpwz34ZCgB1ZDY89RpgUr8TN4pump?coins_sort=market_cap" target="_blank" class="btn" id="buyTokenBtn">Buy Token</a>
             <a href="https://x.com/SolStalkercoin" target="_blank" class="btn" id="ourTwitterBtn">Our Twitter</a>
+            <a href="https://t.me/SolStalker" target="_blank" class="btn" id="ourTelegramBtn">Our Telegram</a>
         </div>
 
         <div id="tokenomicsPage" class="container hidden">
@@ -222,7 +228,7 @@
     </div>
 
     <footer>
-        &copy; 2025 SolStalker. All rights reserved.
+        © 2025 SolStalker. All rights reserved.
     </footer>
 </body>
 </html>
