@@ -1,0 +1,13 @@
+# robots.txt for SolStalker website
+
+# Allow all search engines to index everything
+User-agent: *
+Allow: /
+
+# Disallow specific parts of the website (if needed)
+# Uncomment the following lines if you want to block specific areas:
+# Disallow: /private/
+# Disallow: /temp/
+
+# Sitemap file location (optional, if you create a sitemap.xml)
+Sitemap: https://slstlkr.github.io/sitemap.xml
