@@ -9,5 +9,5 @@ Allow: /
 # Disallow: /private/
 # Disallow: /temp/
 
-# Sitemap file location (optional, if you create a sitemap.xml)
-Sitemap: https://slstlkr.github.io/sitemap.xml
+# Corrected Sitemap file location
+Sitemap: https://slstlkr.github.io/SolStalker/sitemap.xml
