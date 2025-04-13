@@ -1,112 +1,115 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolStalker — Token on Solana</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolStalker — Token on Solana</title>
 
-    <!-- SEO -->
-    <meta name="description" content="SolStalker is a decentralized crypto project on the Solana blockchain. Invest, trade, and follow the project's roadmap.">
-    <meta name="keywords" content="SolStalker, cryptocurrency, Solana, token, blockchain, DeFi, investment, trading, roadmap, whitepaper">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="SolStalker Team">
-    <meta name="copyright" content="© 2025 SolStalker. All rights reserved.">
-    <link rel="canonical" href="https://slstlkr.github.io/SolStalker/">
+  <!-- SEO -->
+  <meta name="description" content="SolStalker is a decentralized crypto project on the Solana blockchain. Invest, trade, and follow the project's roadmap.">
+  <meta name="keywords" content="SolStalker, cryptocurrency, Solana, token, blockchain, DeFi, investment, trading, roadmap, whitepaper">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="SolStalker Team">
+  <meta name="copyright" content="© 2025 SolStalker. All rights reserved.">
+  <link rel="canonical" href="https://slstlkr.github.io/SolStalker/">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="SolStalker — Cryptocurrency on Solana">
-    <meta property="og:description" content="Invest in SolStalker — a fair-launched token with transparent tokenomics. Join the community!">
-    <meta property="og:image" content="https://i.ibb.co/TVYDJmm/Sol-Stalker.jpg">
-    <meta property="og:url" content="https://slstlkr.github.io/SolStalker/">
-    <meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="SolStalker — Cryptocurrency on Solana">
+  <meta property="og:description" content="Invest in SolStalker — a fair-launched token with transparent tokenomics. Join the community!">
+  <meta property="og:image" content="https://i.ibb.co/TVYDJmm/Sol-Stalker.jpg">
+  <meta property="og:url" content="https://slstlkr.github.io/SolStalker/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SolStalker">
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SolStalker — Token on Solana">
-    <meta name="twitter:description" content="Fair launch, liquidity, and full transparency. Learn more about SolStalker!">
-    <meta name="twitter:image" content="https://i.ibb.co/TVYDJmm/Sol-Stalker.jpg">
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SolStalker — Token on Solana">
+  <meta name="twitter:description" content="Fair launch, liquidity, and full transparency. Learn more about SolStalker!">
+  <meta name="twitter:image" content="https://i.ibb.co/TVYDJmm/Sol-Stalker.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/vxF7KXby/favicon-96x96.png" sizes="96x96">
-    <link rel="apple-touch-icon" sizes="192x192" href="https://i.ibb.co/YF6skB4x/web-app-manifest-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="https://i.ibb.co/848zYbpF/web-app-manifest-512x512.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co/vxF7KXby/favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" sizes="192x192" href="https://i.ibb.co/YF6skB4x/web-app-manifest-192x192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="https://i.ibb.co/848zYbpF/web-app-manifest-512x512.png">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://i.ibb.co/TVYDJmm/Sol-Stalker.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            animation: fadeIn 1s ease-in-out;
-        }
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
-            padding: 20px;
-            max-width: 600px;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .btn {
-            padding: 12px 12px;
-            font-size: 1.2em;
-            color: white;
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid white;
-            border-radius: 10px;
-            text-decoration: none;
-            text-align: center;
-            transition: 0.3s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .btn:hover {
-            background: white;
-            color: black;
-            transform: scale(1.05);
-        }
-        
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+  <!-- Styles -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.ibb.co/TVYDJmm/Sol-Stalker.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      padding: 20px;
+      max-width: 600px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 12px 12px;
+      font-size: 1.2em;
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid white;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn:hover {
+      background: white;
+      color: black;
+      transform: scale(1.05);
+    }
 
-        /* Mobile responsive adjustments */
-        @media (max-width: 768px) {
-            .buttons {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .btn {
-                font-size: 1em;
-                padding: 12px 10px;
-            }
-        }
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        @media (max-width: 480px) {
-            .buttons {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
-    </style>
+    /* Responsive */
+    @media (max-width: 768px) {
+      .buttons {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .btn {
+        font-size: 1em;
+        padding: 12px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .buttons {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="buttons">
-        <a href="tokenomics.html" target="_blank" class="btn">Tokenomics</a>
-        <a href="roadmap.html" target="_blank" class="btn">Roadmap</a>
-        <a href="whitepaper.html" target="_blank" class="btn">Whitepaper</a>
-        <a href="https://pump.fun/coin/DFswfPGinkLLjdqZpwz34ZCgB1ZDY89RpgUr8TN4pump?coins_sort=market_cap" class="btn" target="_blank">Buy Token</a>
-        <a href="https://x.com/SolStalkercoin" class="btn" target="_blank">Twitter</a>
-        <a href="https://t.me/SolStalker" class="btn" target="_blank">Telegram</a>
-    </div>
+  <div class="buttons">
+    <a href="tokenomics.html" target="_blank" class="btn">Tokenomics</a>
+    <a href="roadmap.html" target="_blank" class="btn">Roadmap</a>
+    <a href="whitepaper.html" target="_blank" class="btn">Whitepaper</a>
+    <a href="https://pump.fun/coin/DFswfPGinkLLjdqZpwz34ZCgB1ZDY89RpgUr8TN4pump?coins_sort=market_cap" class="btn" target="_blank">Buy Token</a>
+    <a href="https://x.com/SolStalkercoin" class="btn" target="_blank">Twitter</a>
+    <a href="https://t.me/SolStalker" class="btn" target="_blank">Telegram</a>
+  </div>
 </body>
 </html>
